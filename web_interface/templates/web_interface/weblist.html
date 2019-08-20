@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web List</title>
+</head>
+<body>
+
+<h1>Web List</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th> id</th>
+    <th>Link</th>
+    <th>h3</th>
+    <th>h2</th>
+{#    <th>Tags</th>#}
+    </tr>
+</thead>
+<tbody>
+    {% for web in web_list %}
+    <tr>
+    <td>{{ web.id }}</td>
+    <td>{{ web.start_url|truncatechars:70}}</td>
+    <td>{{ web.h3|truncatechars:50}}</td>
+    <td>{{ web.h2|truncatechars:50}}</td>
+{#    <td>{{ capfirst.tags }}</td>#}
+    </tr>
+    {% endfor %}
+
+</tbody>
+
+</table>
+{#{% if web_list.has_other_pages %}#}
+{#  <ul class="pagination">#}
+{#    {% if web_list.has_previous %}#}
+{#      <li><a href="?page={{ web_list.previous_page_number }}">&laquo;</a></li>#}
+{#    {% else %}#}
+{#      <li class="disabled"><span>&laquo;</span></li>#}
+{#    {% endif %}#}
+{#    {% for i in web_list.paginator.page_range %}#}
+{#      {% if web_list.number == i %}#}
+{#        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>#}
+{#      {% else %}#}
+{#        <li><a href="?page={{ i }}">{{ i }}</a></li>#}
+{#      {% endif %}#}
+{#    {% endfor %}#}
+{#    {% if web_list.has_next %}#}
+{#      <li><a href="?page={{ web_list.next_page_number }}">&raquo;</a></li>#}
+{#    {% else %}#}
+{#      <li class="disabled"><span>&raquo;</span></li>#}
+{#    {% endif %}#}
+{#  </ul>#}
+{#{% endif %}#}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+</head>
+<body>
+<div>
+    <form method="post">
+        {% csrf_token %}
+   {{ form.text }}
+    <input type="submit" class="btn btn-primary" role="button">
+    {% if msg %}
+        {% for list in list %}
+            <br>
+        {{ msg }}========>{{ list.start_url  }}
+        {% endfor %}
+    {% endif %}
+
+    </form>
+</div>
+</body>
+</html>
